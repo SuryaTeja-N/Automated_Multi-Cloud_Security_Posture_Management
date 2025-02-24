@@ -1,0 +1,11 @@
+policies:
+  - name: quarantine-unencrypted-volumes
+    resource: aws.ec2
+    filters:
+      - type: ebs
+        key: Encrypted
+        value: false
+    actions:
+      - type: modify-security-groups
+        remove: all  # This removes all security groups
+        isolation-group: sg-xyz123  # Moves instances to this isolation group

@@ -1,0 +1,1 @@
+once we installed the opa agent, we can run it using command : /usr/local/bin/opa run --server

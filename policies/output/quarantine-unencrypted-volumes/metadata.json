@@ -1,0 +1,77 @@
+{
+  "policy": {
+    "name": "quarantine-unencrypted-volumes",
+    "resource": "aws.ec2",
+    "filters": [
+      {
+        "type": "ebs",
+        "key": "Encrypted",
+        "value": false
+      }
+    ],
+    "actions": [
+      {
+        "type": "modify-security-groups",
+        "remove": "all",
+        "isolation-group": "sg-xyz123"
+      }
+    ]
+  },
+  "version": "0.9.43",
+  "execution": {
+    "id": "b1d2d295-baf4-4728-916f-cc34c8813b54",
+    "start": 1740359225.5583434,
+    "end_time": 1740359225.5590038,
+    "duration": 0.0006604194641113281
+  },
+  "config": {
+    "region": "us-east-1",
+    "regions": [
+      "us-east-1"
+    ],
+    "cache": "~/.cache/cloud-custodian.cache",
+    "profile": null,
+    "account_id": "034362029668",
+    "assume_role": null,
+    "session_policy": null,
+    "external_id": null,
+    "log_group": null,
+    "tracer": null,
+    "metrics_enabled": null,
+    "metrics": null,
+    "output_dir": "output",
+    "cache_period": 15,
+    "dryrun": false,
+    "authorization_file": null,
+    "subparser": "run",
+    "config": null,
+    "configs": [
+      "aws/tag-unlabeled-instances.yml",
+      "aws/quarantine-unencrypted-volumes.yml"
+    ],
+    "policy_filters": [],
+    "resource_types": [],
+    "verbose": null,
+    "quiet": null,
+    "debug": false,
+    "skip_validation": false,
+    "command": "c7n.commands.run",
+    "vars": null
+  },
+  "sys-stats": {},
+  "api-stats": {},
+  "metrics": [
+    {
+      "MetricName": "ResourceCount",
+      "Timestamp": "2025-02-23T19:07:05.558955",
+      "Value": 0,
+      "Unit": "Count"
+    },
+    {
+      "MetricName": "ResourceTime",
+      "Timestamp": "2025-02-23T19:07:05.558960",
+      "Value": 0.00035881996154785156,
+      "Unit": "Seconds"
+    }
+  ]
+}

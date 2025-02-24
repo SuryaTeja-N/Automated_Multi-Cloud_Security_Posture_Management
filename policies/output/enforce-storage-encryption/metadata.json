@@ -1,0 +1,75 @@
+{
+  "policy": {
+    "name": "enforce-storage-encryption",
+    "resource": "azure.storage",
+    "filters": [
+      {
+        "type": "value",
+        "key": "properties.encryption.services.blob.enabled",
+        "value": false
+      }
+    ],
+    "actions": [
+      {
+        "type": "tag",
+        "tags": {
+          "EncryptionEnforced": "True"
+        }
+      }
+    ]
+  },
+  "version": "0.9.43",
+  "execution": {
+    "id": "3abedf11-2bfe-4adb-a4e9-dc8e373ab252",
+    "start": 1740360142.8014066,
+    "end_time": 1740360143.3261464,
+    "duration": 0.5247397422790527
+  },
+  "config": {
+    "region": "AzureCloud",
+    "regions": [],
+    "cache": "memory",
+    "profile": null,
+    "account_id": "0d8329fd-3970-4dc7-8118-6070cde67b70",
+    "assume_role": null,
+    "session_policy": null,
+    "external_id": null,
+    "log_group": null,
+    "tracer": null,
+    "metrics_enabled": null,
+    "metrics": null,
+    "output_dir": "output",
+    "cache_period": 15,
+    "dryrun": false,
+    "authorization_file": null,
+    "subparser": "run",
+    "config": null,
+    "configs": [
+      "Azure/enforce-encryption-storage.yml"
+    ],
+    "policy_filters": [],
+    "resource_types": [],
+    "verbose": null,
+    "quiet": null,
+    "debug": false,
+    "skip_validation": false,
+    "command": "c7n.commands.run",
+    "vars": null
+  },
+  "sys-stats": {},
+  "api-stats": {},
+  "metrics": [
+    {
+      "MetricName": "ResourceCount",
+      "Timestamp": "2025-02-23T19:22:23.326062",
+      "Value": 0,
+      "Unit": "Count"
+    },
+    {
+      "MetricName": "ResourceTime",
+      "Timestamp": "2025-02-23T19:22:23.326068",
+      "Value": 0.524381160736084,
+      "Unit": "Seconds"
+    }
+  ]
+}

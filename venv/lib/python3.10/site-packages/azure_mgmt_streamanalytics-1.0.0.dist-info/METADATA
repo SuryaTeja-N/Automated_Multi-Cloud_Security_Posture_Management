@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: azure-mgmt-streamanalytics
+Version: 1.0.0
+Summary: Microsoft Azure Stream Analytics Management Client Library for Python
+Home-page: https://github.com/Azure/azure-sdk-for-python
+Author: Microsoft Corporation
+Author-email: azpysdkhelp@microsoft.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: msrest (>=0.6.21)
+Requires-Dist: azure-common (~=1.1)
+Requires-Dist: azure-mgmt-core (<2.0.0,>=1.3.0)
+
+# Microsoft Azure SDK for Python
+
+This is the Microsoft Azure Stream Analytics Management Client Library.
+This package has been tested with Python 2.7, 3.6+.
+For a more complete view of Azure libraries, see the [azure sdk python release](https://aka.ms/azsdk/python/all).
+
+
+## _Disclaimer_
+
+_Azure SDK Python packages support for Python 2.7 has ended 01 January 2022. For more information and questions, please refer to https://github.com/Azure/azure-sdk-for-python/issues/20691_
+
+# Usage
+
+
+To learn how to use this package, see the [quickstart guide](https://aka.ms/azsdk/python/mgmt)
+
+
+
+For docs and references, see [Python SDK References](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python-preview)
+Code samples for this package can be found at [Stream Analytics Management](https://docs.microsoft.com/samples/browse/?languages=python&term=Getting%20started%20-%20Managing&terms=Getting%20started%20-%20Managing) on docs.microsoft.com.
+Additional code samples for different Azure services are available at [Samples Repo](https://aka.ms/azsdk/python/mgmt/samples)
+
+
+# Provide Feedback
+
+If you encounter any bugs or have suggestions, please file an issue in the
+[Issues](https://github.com/Azure/azure-sdk-for-python/issues)
+section of the project. 
+
+
+![Impressions](https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-python%2Fazure-mgmt-streamanalytics%2FREADME.png)
+
+
+# Release History
+
+## 1.0.0 (2022-01-06)
+
+**Features**
+
+  - Added operation StreamingJobsOperations.begin_scale
+  - Model AzureSqlReferenceInputDataSource has a new parameter database
+  - Model AzureSqlReferenceInputDataSource has a new parameter delta_snapshot_query
+  - Model AzureSqlReferenceInputDataSource has a new parameter full_snapshot_query
+  - Model AzureSqlReferenceInputDataSource has a new parameter password
+  - Model AzureSqlReferenceInputDataSource has a new parameter refresh_rate
+  - Model AzureSqlReferenceInputDataSource has a new parameter refresh_type
+  - Model AzureSqlReferenceInputDataSource has a new parameter server
+  - Model AzureSqlReferenceInputDataSource has a new parameter table
+  - Model AzureSqlReferenceInputDataSource has a new parameter user
+  - Model Cluster has a new parameter capacity_allocated
+  - Model Cluster has a new parameter capacity_assigned
+  - Model Cluster has a new parameter cluster_id
+  - Model Cluster has a new parameter created_date
+  - Model Cluster has a new parameter provisioning_state
+  - Model Operation has a new parameter is_data_action
+  - Model PrivateEndpoint has a new parameter created_date
+  - Model PrivateEndpoint has a new parameter manual_private_link_service_connections
+  - Model Transformation has a new parameter valid_streaming_units
+
+**Breaking changes**
+
+  - Model AzureSqlReferenceInputDataSource no longer has parameter properties
+  - Model Cluster no longer has parameter properties
+  - Model FunctionProperties no longer has parameter binding
+  - Model FunctionProperties no longer has parameter inputs
+  - Model FunctionProperties no longer has parameter output
+  - Model PrivateEndpoint no longer has parameter properties
+  - Model StreamingJob no longer has parameter externals
+
+## 1.0.0rc1 (2020-09-18)
+
+  - Initial Release
+
+

@@ -1,0 +1,7 @@
+initially the function app, not giving option create function, but i have exectuted this command in azure terminal:
+
+surya [ ~ ]$ az functionapp create   --name azure-defender-slack   --resource-group cloud-security-rg-slack   --storage-account cloudsecurityrg   --consumption-plan-location "canadacentral"   --os-type Linux   --runtime python   --runti
+me-version 3.10
+
+
+after that, i got ability to create function in the portal

@@ -1,0 +1,14 @@
+policies:
+  - name: enforce-storage-encryption
+    resource: azure.storage
+    filters:
+      - type: value
+        key: properties.encryption.services.blob.enabled
+        value: false
+    actions:
+      - type: tag
+        tags:
+          EncryptionEnforced: "True"
+
+# here u can see we have used environment variable for azure subscription id, so before running custodian command we need to laod .env variables to our system environment variables by using
+# this command : export $(grep -v '^#' .env | xargs)

@@ -1,0 +1,1 @@
+2025-02-23 19:07:05,558 - custodian.policy - INFO - policy:quarantine-unencrypted-volumes resource:aws.ec2 region:us-east-1 count:0 time:0.00

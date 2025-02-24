@@ -1,0 +1,9 @@
+policies:
+  - name: tag-unlabeled-instances
+    resource: aws.ec2
+    filters:
+      - "tag:Environment": absent
+    actions:
+      - type: tag
+        key: Environment
+        value: Non-Compliant
