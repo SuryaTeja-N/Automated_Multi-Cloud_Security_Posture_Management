@@ -30,3 +30,5 @@ __pycache__/
 
 # Ignore VS Code workspace settings (if any)
 .vscode/
+
+.terraform/
