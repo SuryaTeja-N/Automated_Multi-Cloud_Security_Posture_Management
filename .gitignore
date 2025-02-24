@@ -1,0 +1,32 @@
+# Ignore Python virtual environment
+venv/
+.env
+
+# Ignore Terraform state & lock files (these should not be committed)
+terraform/**/*.tfstate
+terraform/**/*.tfstate.backup
+terraform/.terraform/
+terraform/**/*.lock.hcl
+
+# Ignore sensitive keys & credentials
+*.json
+!requirements.txt  # Exclude all JSON files except requirements.txt
+gcp-key.json
+aws-key.json
+azure-key.json
+
+# Ignore log files
+logs/
+*.log
+
+# Ignore temporary files & cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+
+
+# Ignore VS Code workspace settings (if any)
+.vscode/
