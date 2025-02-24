@@ -1,0 +1,46 @@
+name: Security & Compliance Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  security_scan:
+    name: Run Checkov & Tfsec
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Checkov & Tfsec
+        run: |
+          pip install checkov
+          curl -L https://github.com/aquasecurity/tfsec/releases/latest/download/tfsec-linux-amd64 -o /usr/local/bin/tfsec
+          chmod +x /usr/local/bin/tfsec
+
+      - name: Run Checkov & Tfsec on AWS
+        run: |
+          checkov --directory terraform/aws
+          tfsec terraform/aws
+
+      - name: Run Checkov & Tfsec on Azure
+        run: |
+          checkov --directory terraform/azure
+          tfsec terraform/azure
+
+  compliance:
+    name: Run Cloud Custodian Policies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Cloud Custodian
+        run: pip install c7n
+
+      - name: Execute Cloud Custodian Policies
+        run: |
+          custodian run -s ./policies policies/aws-security.yml
+          custodian run -s ./policies policies/azure-security.yml
